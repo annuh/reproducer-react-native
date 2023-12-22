@@ -1,5 +1,20 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+# Reproducer repo
+
+This repo is meant as a reproducer for https://github.com/facebook/react-native/issues/41721.
+
+Steps to reproduce:
+
+```
+# first install the dependencies
+yarn
+pod install --project-directory=ios
+
+# After running `pod install` again, the `./ios/AwesomeProject.xcodeproj/project.pbxproj` will contain duplicates in the `HEADER_SEARCH_PATHS` entries
+pod install --project-directory=ios
+```
+
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
